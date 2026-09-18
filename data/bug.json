@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "1101",
+    "title": "Infinite loop detected",
+    "description": "Page freezes when clicking save twice",
+    "severity": 4,
+    "createdAt": 1690000000000
+  },
+  {
+    "_id": "1102",
+    "title": "Cannot read property of undefined",
+    "description": "Crash when bug list is empty",
+    "severity": 3,
+    "createdAt": 1690000100000
+  },
+  {
+    "_id": "1103",
+    "title": "Vague error message",
+    "description": "User has no idea what went wrong",
+    "severity": 2,
+    "createdAt": 1690000200000
+  }
+]
