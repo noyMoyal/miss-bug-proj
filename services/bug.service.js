@@ -4,7 +4,9 @@ import { loggerService } from './logger.service.js'
 
 export const bugService = {
     query,
-    save
+    save,
+    getById,
+    remove
 }
 
 const bugs = utilService.readJsonFile('data/bug.json')
@@ -37,4 +39,16 @@ function _saveBugsToFile() {
             resolve()
         })
     })
+}
+
+function getById(bugId) {
+    const bug = bugs.find(bug => bug._id === bugId)
+    if (!bug) return Promise.reject('Bug not found!')
+    return Promise.resolve(bug)
+}
+
+function remove(bugId) {
+    const idx = bugs.findIndex(currBug => currBug._id === bugId)
+    bugs.splice(idx, 1)
+    return _saveBugsToFile()
 }

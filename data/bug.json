@@ -14,13 +14,6 @@
     "createdAt": 1690000000000
   },
   {
-    "_id": "1102",
-    "title": "Cannot read property of undefined",
-    "description": "Crash when bug list is empty",
-    "severity": 3,
-    "createdAt": 1690000100000
-  },
-  {
     "_id": "1103",
     "title": "Vague error message",
     "description": "User has no idea what went wrong",
