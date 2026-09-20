@@ -2,6 +2,7 @@ import express from 'express'
 import { bugService } from './services/bug.service.js'
 import { loggerService } from './services/logger.service.js'
 const app = express()
+app.use(express.static('public'))
 
 app.get('/' ,  (req, res) => res.send('Hello team!!!'))
 
