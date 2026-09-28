@@ -15,6 +15,19 @@ app.get('/api/bug', (req, res) => {
         res.send(bugs)
     })
 })
+app.post('/api/bug', (req, res) => {
+    const { title, severity, description, labels } = req.body
+    if (!title) return res.status(400).send('Missing required fields')
+    if (severity === undefined) return res.status(400).send('Missing required fields')
+    const bugToSave = {
+        title,
+        severity: +severity || 1,
+        description: description || '',
+        labels: labels || [],
+        createdAt: Date.now(),
+    }
+    bugService.save(bugToSave).then(bug => res.send(bug))
+})
 
 app.get('/api/bug/save', (req, res) => {
     const { title, description, severity, _id } = req.query

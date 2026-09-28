@@ -1,5 +1,15 @@
 [
   {
+    "title": "New bug from Postman",
+    "severity": 4,
+    "description": "testing POST",
+    "labels": [
+      "critical"
+    ],
+    "createdAt": 1790625182732,
+    "_id": "HbxB6"
+  },
+  {
     "_id": "ohWta",
     "title": "Bug 1790457183977",
     "description": "DES",
