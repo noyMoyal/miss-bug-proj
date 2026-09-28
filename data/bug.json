@@ -5,26 +5,5 @@
     "description": "DES",
     "severity": 3,
     "createdAt": 1790457198923
-  },
-  {
-    "_id": "ZVnG0",
-    "title": "Test Bug",
-    "description": "Testing the save route",
-    "severity": 3,
-    "createdAt": 1789826975876
-  },
-  {
-    "_id": "1101",
-    "title": "Infinite loop detected",
-    "description": "Page freezes when clicking save twice",
-    "severity": 4,
-    "createdAt": 1690000000000
-  },
-  {
-    "_id": "1103",
-    "title": "Vague error message",
-    "description": "User has no idea what went wrong",
-    "severity": 2,
-    "createdAt": 1690000200000
   }
 ]

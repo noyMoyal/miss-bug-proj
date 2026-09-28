@@ -5,6 +5,7 @@ import { loggerService } from './services/logger.service.js'
 const app = express()
 app.use(cookieParser())
 app.use(express.static('public'))
+app.use(express.json())
 
 app.get('/' ,  (req, res) => res.send('Hello team!!!'))
 
@@ -51,13 +52,13 @@ app.get('/api/bug/:bugId', (req, res) => {
         })
 })
 
-app.get('/api/bug/:bugId/remove', (req, res) => {
+app.delete('/api/bug/:bugId', (req, res) => {
     const { bugId } = req.params
     bugService.remove(bugId).then(() => {
-        res.send('Removed!')
+        res.send('Deleted!')
     }).catch(err => {
-        loggerService.error('Cannot remove bug', err)
-        res.status(400).send('Cannot remove bug')
+        loggerService.error('Cannot Delete bug', err)
+        res.status(400).send('Cannot Delete bug')
     })
 })
 
