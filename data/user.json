@@ -1,0 +1,15 @@
+[
+  {
+    "_id": "u1adm",
+    "username": "admin",
+    "password": "admin",
+    "fullname": "Admin Adminson",
+    "isAdmin": true
+  },
+  {
+    "_id": "u2noy",
+    "username": "noy",
+    "password": "noy123",
+    "fullname": "Noy Moyal"
+  }
+]
