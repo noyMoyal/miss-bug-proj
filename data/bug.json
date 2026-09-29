@@ -1,5 +1,15 @@
 [
   {
+    "title": "Bug 1790713996729",
+    "severity": 3,
+    "description": "",
+    "labels": [
+      "critical"
+    ],
+    "createdAt": 1790714014748,
+    "_id": "iQnjc"
+  },
+  {
     "title": "Updated title",
     "severity": 5,
     "description": "testing POST",
