@@ -9,12 +9,31 @@ app.use(express.json())
 
 app.get('/' ,  (req, res) => res.send('Hello team!!!'))
 
+function getQueryOptions(query) {
+    const filterBy = {
+        txt: query.txt || '',
+        minSeverity: +query.minSeverity || 0,
+        labels: query.labels || [],
+    }
+    const sortBy = {
+        sortField: query.sortField || '',
+        sortDir: +query.sortDir || 1,
+    }
+    const pageIdx = query.pageIdx !== undefined ? +query.pageIdx : undefined
+    const pageSize = +query.pageSize || 3
+    return { filterBy, sortBy, pageIdx, pageSize }
+}
 
 app.get('/api/bug', (req, res) => {
-    bugService.query().then(bugs => {
-        res.send(bugs)
+    const { filterBy, sortBy, pageIdx, pageSize } = getQueryOptions(req.query)
+    bugService.query(filterBy, sortBy, pageIdx, pageSize).then(data => {
+        res.send(data)
+    }).catch(err => {
+        loggerService.error('Cannot get bugs', err)
+        res.status(400).send('Cannot get bugs')
     })
 })
+
 app.post('/api/bug', (req, res) => {
     const { title, severity, description, labels } = req.body
     if (!title) return res.status(400).send('Missing required fields')
